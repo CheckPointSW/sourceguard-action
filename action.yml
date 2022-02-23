@@ -17,7 +17,7 @@ runs:
       
     - name: Running SourceGuard code analysis
       shell: bash
-      run: /sourceguard-cli --src ./
-      with:
-        SG_CLIENT_ID: ${{ inputs.SG_CLIENT_ID }}
-        SG_SECRET_KEY: ${{ inputs.SG_SECRET_KEY }}
+      run: |
+        echo ${{ inputs.SG_CLIENT_ID }} >> $SG_CLIENT_ID
+        echo ${{ inputs.SG_SECRET_KEY }} >> $SG_SECRET_KEY
+        /sourceguard-cli --src ./
