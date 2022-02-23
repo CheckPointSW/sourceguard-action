@@ -1,0 +1,22 @@
+name: "SourceGuard Code Analysis"
+description: ""
+
+inputs:
+  SG_CLIENT_ID:
+    description: ""
+    required: true
+  SG_SECRET_KEY:
+    description: ""
+    required: true
+
+runs:
+  using: "ubuntu-latest"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    - name: Running SourceGuard code analysis
+      run: /sourceguard-cli --src ./
+      with:
+        SG_CLIENT_ID: ${{ inputs.SG_CLIENT_ID }}
+        SG_SECRET_KEY: ${{ inputs.SG_SECRET_KEY }}
