@@ -16,6 +16,9 @@ runs:
       uses: actions/checkout@v2
       
     - name: Running SourceGuard code analysis
+      container:
+        image: sourceguard/sourceguard-cli
+      shell: bash
       run: /sourceguard-cli --src ./
       with:
         SG_CLIENT_ID: ${{ inputs.SG_CLIENT_ID }}
