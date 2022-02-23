@@ -11,13 +11,13 @@ inputs:
 
 runs:
   using: "composite"
+  container:
+    image: sourceguard/sourceguard-cli
   steps:
     - name: Checkout
       uses: actions/checkout@v2
       
     - name: Running SourceGuard code analysis
-      container:
-        image: sourceguard/sourceguard-cli
       shell: bash
       run: /sourceguard-cli --src ./
       with:
