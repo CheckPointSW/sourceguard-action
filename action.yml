@@ -16,7 +16,6 @@ runs:
       uses: actions/checkout@v2
       
     - name: Running SourceGuard code analysis
-      shell: bash
       run: |
         echo ${{ inputs.SG_CLIENT_ID }} >> $SG_CLIENT_ID
         echo ${{ inputs.SG_SECRET_KEY }} >> $SG_SECRET_KEY
