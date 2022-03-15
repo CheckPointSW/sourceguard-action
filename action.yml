@@ -1,17 +1,18 @@
 name: "SourceGuard Code Analysis"
-description: ""
+description: "SourceGuard is designed to leverage Check Point's varied prevention technologies and services, providing source-code security and visibility. With a simple, cross-platform CLI tool users can customize exclusions and control an ignore list with easy integration into any pipeline."
 
 inputs:
   SG_CLIENT_ID:
-    description: ""
+    description: "Infinity Portal account identification"
     required: true
   SG_SECRET_KEY:
-    description: ""
+    description: "Secret key for access"
     required: true
 
 runs:
   using: "composite"
   steps:
+  
     - name: Checkout
       uses: actions/checkout@v2
       
@@ -21,4 +22,3 @@ runs:
       env:
         SG_CLIENT_ID: ${{ inputs.SG_CLIENT_ID }}
         SG_SECRET_KEY: ${{ inputs.SG_SECRET_KEY }}
-      
