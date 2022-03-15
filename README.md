@@ -21,7 +21,7 @@ jobs:
       image: sourceguard/sourceguard-cli
     steps:
       - name: SourceGuard Scan
-        uses: CheckPointSW/sourceguard@main
+        uses: CheckPointSW/sourceguard-action@main
         with:
           SG_CLIENT_ID: ${{ secrets.SG_CLIENT_ID }}
           SG_SECRET_KEY: ${{ secrets.SG_SECRET_KEY }}
