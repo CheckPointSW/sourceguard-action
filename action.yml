@@ -15,7 +15,8 @@ runs:
   
     - name: Checkout
       uses: actions/checkout@v2
-      
+      with:
+          fetch-depth: '0'
     - name: Running SourceGuard code analysis
       shell: sh
       run: /sourceguard-cli --src ./ --l source=github
