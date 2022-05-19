@@ -19,7 +19,7 @@ runs:
           fetch-depth: '0'
     - name: Running SourceGuard code analysis
       shell: sh
-      run: /sourceguard-cli --src ./ --l source=github
+      run: /sourceguard-cli --src ./ -nc --l source=github
       env:
         SG_CLIENT_ID: ${{ inputs.SG_CLIENT_ID }}
         SG_SECRET_KEY: ${{ inputs.SG_SECRET_KEY }}
